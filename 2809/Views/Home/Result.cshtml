@@ -1,0 +1,44 @@
+﻿@model MatrixModel
+
+<h2>Результат сложения матриц</h2>
+
+<h3>Первая матрица</h3>
+<table border="1">
+    @for (int i = 0; i < Model.Size; i++)
+    {
+        <tr>
+            @for (int j = 0; j < Model.Size; j++)
+            {
+                <td>@Model.Matrix1[i, j]</td>
+            }
+        </tr>
+    }
+</table>
+
+<h3>Вторая матрица</h3>
+<table border="1">
+    @for (int i = 0; i < Model.Size; i++)
+    {
+        <tr>
+            @for (int j = 0; j < Model.Size; j++)
+            {
+                <td>@Model.Matrix2[i, j]</td>
+            }
+        </tr>
+    }
+</table>
+
+<h3>Результат</h3>
+<table border="1">
+    @for (int i = 0; i < Model.Size; i++)
+    {
+        <tr>
+            @for (int j = 0; j < Model.Size; j++)
+            {
+                <td>@Model.Result[i, j]</td>
+            }
+        </tr>
+    }
+</table>
+
+<a asp-action="Index">Назад</a>

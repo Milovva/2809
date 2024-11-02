@@ -1,0 +1,34 @@
+﻿@model MatrixModel
+
+<form asp-action="Calculate" method="post">
+    <h2>Выберите размер матрицы</h2>
+    <select asp-for="Size">
+        <option value="3">3x3</option>
+        <option value="6">6x6</option>
+        <option value="9">9x9</option>
+    </select>
+
+    <h3>Первая матрица</h3>
+    @for (int i = 0; i < Model.Size; i++)
+    {
+        <div>
+            @for (int j = 0; j < Model.Size; j++)
+            {
+                <input type="number" asp-for="Matrix1[i,j]" />
+            }
+        </div>
+    }
+
+    <h3>Вторая матрица</h3>
+    @for (int i = 0; i < Model.Size; i++)
+    {
+        <div>
+            @for (int j = 0; j < Model.Size; j++)
+            {
+                <input type="number" asp-for="Matrix2[i,j]" />
+            }
+        </div>
+    }
+
+    <button type="submit">Вычислить</button>
+</form>
